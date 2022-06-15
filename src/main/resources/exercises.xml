@@ -1,0 +1,7 @@
+<suite name="Test-method Suite" parallel="methods" thread-count="5" >
+    <test name="Test-method test" group-by-instances="true" groups="parameters">
+        <classes>
+            <class name="org.example.ten.exercises.HomeworkCalculator" />
+        </classes>
+    </test>
+</suite>

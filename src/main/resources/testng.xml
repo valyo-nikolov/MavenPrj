@@ -1,0 +1,26 @@
+<suite name="Test-method Suite" parallel="methods" thread-count="5" >
+    <test name="Test-method test" group-by-instances="true">
+        <classes>
+            <class name="org.example.ten.ParallelMethodTest" />
+        </classes>
+    </test>
+<!--    <parameter name="suiteParam" value="On suite level" />-->
+<!--    <test name="Test-method test" group-by-instances="true" groups="parameters">-->
+<!--        <classes>-->
+<!--            <class name="org.example.ten.ParametersExample" />-->
+<!--            <methods>-->
+<!--                <include name="singleParamTest" />-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Test-method multiParamTest" group-by-instances="true" groups="parameters">-->
+<!--        <parameter name="suiteParam" value="On test level - Overriding suite param"/>-->
+<!--        <parameter name="testParam" value="On test level"/>-->
+<!--        <classes>-->
+<!--            <class name="org.example.ten.ParametersExample" />-->
+<!--            <methods>-->
+<!--                <include name="multiParamTest" />-->
+<!--            </methods>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
