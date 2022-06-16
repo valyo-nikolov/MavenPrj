@@ -29,6 +29,8 @@ public class Student implements Serializable {
         System.out.println("Registration Number: " + this.regNo);
         System.out.println("Is Hosteller: " + this.isHosteller);
         System.out.println("Serial version UID: " + serialVersionUID);
+//        System.out.println("Serial version UID: " + serialVersionUID);
+//        System.out.println("Serial version UID: " + serialVersionUID);
     }
 }
 
