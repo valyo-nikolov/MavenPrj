@@ -23,6 +23,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 #my change 2
+#This is conflict example resolve
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
@@ -35,3 +36,5 @@ out/
 *.iml
 *.ipr
 *.iws
+
+
