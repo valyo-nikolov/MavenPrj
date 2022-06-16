@@ -22,6 +22,7 @@ pom.xml.bak
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+#This is conflict example resolve
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
@@ -34,3 +35,5 @@ out/
 *.iml
 *.ipr
 *.iws
+
+
