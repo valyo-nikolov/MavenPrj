@@ -1,9 +1,16 @@
-<suite name="Test-method Suite" parallel="methods" thread-count="5" >
+<suite name="Test-method Suite" parallel="methods" thread-count="1" >
     <test name="Test-method test" group-by-instances="true">
+<!--        <parameter name="username" value="valyo2"/>-->
+        <parameter name="password" value="pass1234"/>
         <classes>
-            <class name="org.example.ten.ParallelMethodTest" />
+            <class name="api.tests.RestAssuredDemoTest" />
         </classes>
     </test>
+<!--    <test name="Test-method test" group-by-instances="true">-->
+<!--        <classes>-->
+<!--            <class name="org.example.ten.ParallelMethodTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <parameter name="suiteParam" value="On suite level" />-->
 <!--    <test name="Test-method test" group-by-instances="true" groups="parameters">-->
 <!--        <classes>-->
