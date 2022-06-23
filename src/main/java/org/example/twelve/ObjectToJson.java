@@ -1,10 +1,11 @@
 package org.example.twelve;
 
-import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
 class ObjectToJson {
-    public static void main(String[] a)
-    {
+    public static void main(String[] a) {
         // Creating object of Product
         Product product = new Product();
         // Inserting the data into the object
@@ -16,14 +17,13 @@ class ObjectToJson {
             String jsonStr = obj.writeValueAsString(product);
             // Displaying Java object into a JSON string
             System.out.println(jsonStr);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     // Getting data that we want to insert into an object
-    public static Product getObjectData(Product product)
-    {
+    public static Product getObjectData(Product product) {
         // Insert the data
         product.setId(101);
         product.setName("Spark 131");

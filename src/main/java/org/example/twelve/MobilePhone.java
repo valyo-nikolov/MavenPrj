@@ -43,6 +43,7 @@ public class MobilePhone {
 }
 
 class ConvertJSON {
+
     public static MobilePhone getMobile(MobilePhone mobile) {
         mobile.setBrand("SAMSUNG");
         mobile.setName("J2 Core");
