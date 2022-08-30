@@ -48,6 +48,7 @@ public class RestAssuredDemoTest {
     String username;
     SecureRandom random;
     int userId;
+    int postId;
 
     @BeforeTest
     public void setUp() {
@@ -211,6 +212,8 @@ public class RestAssuredDemoTest {
         Assert.assertEquals(response.jsonPath().get("coverUrl"), coverUrl);
         Assert.assertEquals(response.jsonPath().get("caption"), caption);
         Assert.assertEquals(response.jsonPath().get("user.username"), username);
+
+        postId = response.jsonPath().get("id");
     }
 
     @Test(dependsOnGroups = "signup")
@@ -243,6 +246,52 @@ public class RestAssuredDemoTest {
         Assert.assertEquals(response.jsonPath().get("coverUrl"), coverUrl);
         Assert.assertEquals(response.jsonPath().get("caption"), caption);
         Assert.assertEquals(response.jsonPath().get("user.username"), username);
+    }
+
+    @Test(dependsOnGroups = "signup", dependsOnMethods = "testCreatePublicPost")
+    public void testListUserPublicPosts() {
+        int numberOfPosts = 1;
+        int numberOfSkippedPosts = 0;
+        String postStatus = "public";
+
+        Response response = given()
+                .log()
+                .all()
+                .pathParam("userId", userId)
+                .queryParam("take", numberOfPosts)
+                .queryParam("skip", numberOfSkippedPosts)
+                .queryParam("postStatus", postStatus)
+                .queryParam("userId", userId)
+                .header("Authorization", accessToken)
+                .when()
+                .get("/users/{userId}/posts")
+                .then().log().all()
+                .extract()
+                .response();
+
+
+        int statusCode = response.statusCode();
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
+        Assert.assertEquals(response.jsonPath().get("postStatus").toString(), "[public]");
+
+    }
+
+    @Test(dependsOnGroups = "signup", dependsOnMethods = {"testListUserPublicPosts", "testCreatePublicPost"})
+    public void testDeleteUserPost() {
+        Response response = given()
+                .log()
+                .all()
+                .pathParam("postId", postId)
+                .header("Authorization", accessToken)
+                .contentType(ContentType.JSON)
+                .when()
+                .delete("/posts/{postId}")
+                .then().log().all()
+                .extract()
+                .response();
+
+        int statusCode = response.statusCode();
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
     }
 
 }

@@ -43,27 +43,31 @@ class Demo {
         Student student3 = new Student("John", 7.13, 103, true);
         System.out.println("Before Serialization:");
         student1.print();
+        System.out.println();
         student2.print();
+        System.out.println();
         student3.print();
+        System.out.println();
+        System.out.println();
 
         //Serialization
-        FileOutputStream fileOutputStream = new FileOutputStream("demo1.txt");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(student1);
-        objectOutputStream.close();
-        fileOutputStream.close();
-
-        fileOutputStream = new FileOutputStream("demo2.txt");
-        objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(student2);
-        objectOutputStream.close();
-        fileOutputStream.close();
-
-        fileOutputStream = new FileOutputStream("demo3.txt");
-        objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(student3);
-        objectOutputStream.close();
-        fileOutputStream.close();
+//        FileOutputStream fileOutputStream = new FileOutputStream("demo1.txt");
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//        objectOutputStream.writeObject(student1);
+//        objectOutputStream.close();
+//        fileOutputStream.close();
+//
+//        fileOutputStream = new FileOutputStream("demo2.txt");
+//        objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//        objectOutputStream.writeObject(student2);
+//        objectOutputStream.close();
+//        fileOutputStream.close();
+//
+//        fileOutputStream = new FileOutputStream("demo3.txt");
+//        objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//        objectOutputStream.writeObject(student3);
+//        objectOutputStream.close();
+//        fileOutputStream.close();
 
         Student.universityId = 90; //Changing the static field
 
@@ -79,7 +83,7 @@ class Demo {
         objectInputStream.close();
         fileInputStream.close();
 
-        fileInputStream = new FileInputStream("demo1.txt");
+        fileInputStream = new FileInputStream("demo2.txt");
         objectInputStream = new ObjectInputStream(fileInputStream);
 
         Student deserializedStudent2 = (Student) objectInputStream.readObject();

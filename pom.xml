@@ -19,6 +19,11 @@
         <rest-assured.version>5.1.1</rest-assured.version>
         <demo.version>7.6.0</demo.version>
         <json-simple.version>1.1.1</json-simple.version>
+        <org.uncommons.reporting.version>1.1.4</org.uncommons.reporting.version>
+        <guice.version>5.1.0</guice.version>
+        <selenium-java.vsersion>4.1.1</selenium-java.vsersion>
+        <commons-io.version>2.11.0</commons-io.version>
+        <webdrivermanager.version>5.2.0</webdrivermanager.version>
     </properties>
 
 
@@ -52,6 +57,33 @@
             <artifactId>json-simple</artifactId>
             <version>${json-simple.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>${org.uncommons.reporting.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.vsersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
 
     </dependencies>
 
@@ -70,7 +102,7 @@
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <!--suppress UnresolvedMavenProperty -->
+<!--                            suppress UnresolvedMavenProperty -->
 <!--                                                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                             <suiteXmlFile>./src/main/resources/testng.xml</suiteXmlFile>
                         </suiteXmlFiles>

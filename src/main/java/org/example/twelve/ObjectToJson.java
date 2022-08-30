@@ -1,6 +1,8 @@
 package org.example.twelve;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 
@@ -20,6 +22,25 @@ class ObjectToJson {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        JSONObject animal = new JSONObject();
+        JSONArray legs = new JSONArray();
+        animal.put("name", "Krokodil");
+        animal.put("opashka", 56);
+        JSONObject something = new JSONObject();
+        something.put(1, 167);
+        something.put(2, 87);
+        something.put(3, "Tail");
+        animal.put("something", something);
+        animal.put("legs", legs);
+
+        System.out.println("ANIMAL JSON object: " + animal);
+        System.out.println("ANIMAL JSON object: " + animal.get("name"));
+        System.out.println("ANIMAL JSON object: " + animal.get("opashka"));
+        System.out.println("ANIMAL JSON object: " + animal.get("something"));
+//        JSONArray array = (JSONArray) animal.get("something");
+        JSONObject array = (JSONObject) animal.get("something");
+        System.out.println("ANIMAL JSON object: " + array.get(2));
     }
 
     // Getting data that we want to insert into an object
